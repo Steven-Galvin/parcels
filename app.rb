@@ -4,7 +4,7 @@ also_reload("lib/**/*.rb")
 require('./lib/task')
 
 get("/") do
-  @parcels = Parcel
+  @parcels = Parcel.all()
   erb(:index)
 end
 
@@ -14,6 +14,6 @@ post("/confirmation") do
   height = params.fetch("height").to_i
   weight = params.fetch("weight").to_i
   parcel = Parcel.new(length, width, height, weight)
-
+  parcel.save_parcel()
   erb(:confirmation)
 end
