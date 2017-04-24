@@ -1,32 +1,38 @@
-<p>Create new parcel</p>
+<h4>Create new parcel</h4>
 
-<form action="/confirmation" method="post">
+<form method="post">
   <div class="form-group">
     <label for="length">Enter the length: </label>
-    <input name="length" class="form-control" type="number">
+    <input name="length" class="form-control" type="number" step="any">
     <br>
   </div>
   <div class="form-group">
     <label for="width">Enter the width: </label>
-    <input name="width" class="form-control" type="number">
+    <input name="width" class="form-control" type="number" step="any">
     <br>
   </div>
   <div class="form-group">
     <label for="height">Enter the height: </label>
-    <input name="height" class="form-control" type="number">
+    <input name="height" class="form-control" type="number" step="any">
     <br>
   </div>
   <div class="form-group">
     <label for="weight">Enter the weight: </label>
-    <input name="weight" class="form-control" type="number">
+    <input name="weight" class="form-control" type="number" step="any">
     <br>
   </div>
-  <button type="submit" class="btn">Add Parcel</button>
+  <button type="submit" class="btn" formaction="/confirmation">Add Parcel</button>
+  <!-- <button type="submit" class="btn" formaction="/total">Total</button> -->
 </form>
-<p>Here are all your parcels:</p>
+<br>
+<h4>Here are all your parcels:</h4>
 
 <ol>
   <% @parcels.each() do |parcel| %>
     <li><%= parcel.description() %></li>
   <% end %>
 </ol>
+
+<form class="btn" action="/total">
+  <button  type="submit" type="button" class="btn">Total</button>
+</form>
