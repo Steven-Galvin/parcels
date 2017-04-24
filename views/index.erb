@@ -1,0 +1,36 @@
+<p>Create new parcel</p>
+
+<form action="/confirmation" method="post">
+  <div class="form-group">
+    <label for="length">Enter the length: </label>
+    <input name="length" class="form-control" type="number">
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="width">Enter the width: </label>
+    <input name="width" class="form-control" type="number">
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="height">Enter the height: </label>
+    <input name="height" class="form-control" type="number">
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="weight">Enter the weight: </label>
+    <input name="weight" class="form-control" type="number">
+    <br>
+  </div>
+  <button type="submit" class="btn">Add Parcel</button>
+</form>
+<p>Here are all your parcels:</p>
+
+<ol>
+  <% @parcels.each() do |parcel| %>
+    <li><%= parcel.description() %></li>
+  <% end %>
+</ol>
+
+<!--
+# dimensions : cost
+# 1. 12" x 12" x 12, 4.3lbs: $12.45 -->
